@@ -18,7 +18,8 @@ public class User {
         @Column(unique = true, updatable = false)
         private String publicId = UUID.randomUUID().toString();
         
-
+        @Column(unique = true)
+        private String githubId;
     private String username;
     private String password;
     private String token;

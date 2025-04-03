@@ -1,0 +1,233 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 805306368 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3600), pid=14044, tid=22524
+#
+# JRE version:  (21.0.2+13) (build )
+# Java VM: OpenJDK 64-Bit Server VM (21.0.2+13-LTS, mixed mode, emulated-client, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:TieredStopAtLevel=1 org.ac.cst8277.ferguson.kyle.messageservice.MessageServiceApplication
+
+Host: AMD Ryzen 7 2700X Eight-Core Processor         , 16 cores, 47G,  Windows 11 , 64 bit Build 22000 (10.0.22000.2538)
+Time: Thu Apr  3 16:00:28 2025 Eastern Daylight Time elapsed time: 0.009850 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000021b9c4a9770):  JavaThread "Unknown thread" [_thread_in_vm, id=22524, stack(0x000000adf3300000,0x000000adf3400000) (1024K)]
+
+Stack: [0x000000adf3300000,0x000000adf3400000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6d47f9]
+V  [jvm.dll+0x8afff3]
+V  [jvm.dll+0x8b234e]
+V  [jvm.dll+0x8b2a33]
+V  [jvm.dll+0x284e96]
+V  [jvm.dll+0x6d0fc5]
+V  [jvm.dll+0x6c56fa]
+V  [jvm.dll+0x35bb9b]
+V  [jvm.dll+0x363746]
+V  [jvm.dll+0x3b4c06]
+V  [jvm.dll+0x3b4ed8]
+V  [jvm.dll+0x32f2dc]
+V  [jvm.dll+0x32ffcb]
+V  [jvm.dll+0x878169]
+V  [jvm.dll+0x3c1fd1]
+V  [jvm.dll+0x860b88]
+V  [jvm.dll+0x455c1e]
+V  [jvm.dll+0x4576f1]
+C  [jli.dll+0x52ab]
+C  [ucrtbase.dll+0x26c0c]
+C  [KERNEL32.DLL+0x153e0]
+C  [ntdll.dll+0x485b]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffcecbbc048, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x0000021b9e77bc00 WorkerThread "GC Thread#0"                     [id=7216, stack(0x000000adf3400000,0x000000adf3500000) (1024K)]
+  0x0000021b9e788c60 ConcurrentGCThread "G1 Main Marker"            [id=26556, stack(0x000000adf3500000,0x000000adf3600000) (1024K)]
+  0x0000021b9e789670 WorkerThread "G1 Conc#0"                       [id=6996, stack(0x000000adf3600000,0x000000adf3700000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffcec2c2437]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ffcecc30238] Heap_lock - owner thread: 0x0000021b9c4a9770
+
+Heap address: 0x0000000501000000, size: 12272 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 64 size 144 Howl #buckets 8 coarsen threshold 14745 Howl Bitmap #cards 2048 size 272 coarsen threshold 1843 Card regions per heap region 1 cards per card region 16384
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000501000000, 0x0000000800000000)
+  region size 8192K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffcec6ad5d9]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.004 Loaded shared library C:\Program Files\Amazon Corretto\jdk21.0.2_13\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff7441c0000 - 0x00007ff7441ce000 	C:\Program Files\Amazon Corretto\jdk21.0.2_13\bin\java.exe
+0x00007ffdbb800000 - 0x00007ffdbba09000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffdba940000 - 0x00007ffdba9fd000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffdb92c0000 - 0x00007ffdb9644000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffdb9050000 - 0x00007ffdb9161000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffda0f10000 - 0x00007ffda0f28000 	C:\Program Files\Amazon Corretto\jdk21.0.2_13\bin\jli.dll
+0x00007ffd9ad00000 - 0x00007ffd9ad1b000 	C:\Program Files\Amazon Corretto\jdk21.0.2_13\bin\VCRUNTIME140.dll
+0x00007ffdbad20000 - 0x00007ffdbaecd000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffda02b0000 - 0x00007ffda0555000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22000.120_none_9d947278b86cc467\COMCTL32.dll
+0x00007ffdb9210000 - 0x00007ffdb9236000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffdba1b0000 - 0x00007ffdba253000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffdba600000 - 0x00007ffdba62a000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffdb8f30000 - 0x00007ffdb904e000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffdb9170000 - 0x00007ffdb920d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffdbb3f0000 - 0x00007ffdbb421000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffd9ee60000 - 0x00007ffd9ee6c000 	C:\Program Files\Amazon Corretto\jdk21.0.2_13\bin\vcruntime140_1.dll
+0x00007ffcf35b0000 - 0x00007ffcf363d000 	C:\Program Files\Amazon Corretto\jdk21.0.2_13\bin\msvcp140.dll
+0x00007ffcebf80000 - 0x00007ffcecd10000 	C:\Program Files\Amazon Corretto\jdk21.0.2_13\bin\server\jvm.dll
+0x00007ffdbaa00000 - 0x00007ffdbaaae000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffdb9f50000 - 0x00007ffdb9fee000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffdb9650000 - 0x00007ffdb9771000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffdbb360000 - 0x00007ffdbb3cf000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffdae690000 - 0x00007ffdae6c3000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffdb7580000 - 0x00007ffdb75cd000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ffdafd00000 - 0x00007ffdafd0a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffdb7670000 - 0x00007ffdb7683000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ffdb7db0000 - 0x00007ffdb7dc8000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffd9ade0000 - 0x00007ffd9adea000 	C:\Program Files\Amazon Corretto\jdk21.0.2_13\bin\jimage.dll
+0x00007ffdad920000 - 0x00007ffdadb41000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffda9360000 - 0x00007ffda9391000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffdb9240000 - 0x00007ffdb92bf000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffd8ffa0000 - 0x00007ffd8ffbf000 	C:\Program Files\Amazon Corretto\jdk21.0.2_13\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Amazon Corretto\jdk21.0.2_13\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22000.120_none_9d947278b86cc467;C:\Program Files\Amazon Corretto\jdk21.0.2_13\bin\server
+
+VM Arguments:
+jvm_args: -XX:TieredStopAtLevel=1 
+java_command: org.ac.cst8277.ferguson.kyle.messageservice.MessageServiceApplication
+java_class_path (initial): D:\SCHOOL\ENTERPRISE\Assignment 3\messageservice\target\classes;C:\Users\Kyl\.m2\repository\ch\qos\logback\logback-classic\1.5.18\logback-classic-1.5.18.jar;C:\Users\Kyl\.m2\repository\ch\qos\logback\logback-core\1.5.18\logback-core-1.5.18.jar;C:\Users\Kyl\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.3\log4j-to-slf4j-2.24.3.jar;C:\Users\Kyl\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\Kyl\.m2\repository\org\slf4j\jul-to-slf4j\2.0.17\jul-to-slf4j-2.0.17.jar;C:\Users\Kyl\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\Kyl\.m2\repository\org\yaml\snakeyaml\2.3\snakeyaml-2.3.jar;C:\Users\Kyl\.m2\repository\com\zaxxer\HikariCP\5.1.0\HikariCP-5.1.0.jar;C:\Users\Kyl\.m2\repository\org\springframework\spring-jdbc\6.2.5\spring-jdbc-6.2.5.jar;C:\Users\Kyl\.m2\repository\org\hibernate\orm\hibernate-core\6.6.11.Final\hibernate-core-6.6.11.Final.jar;C:\Users\Kyl\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\Kyl\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\Kyl\.m2\repository\org\jboss\logging\jboss-logging\3.6.1.Final\jboss-logging-3.6.1.Final.jar;C:\Users\Kyl\.m2\repository\org\hibernate\common\hibernate-commons-annotations\7.0.3.Final\hibernate-commons-annotations-7.0.3.Final.jar;C:\Users\Kyl\.m2\repository\io\smallrye\jandex\3.2.0\jandex-3.2.0.jar;C:\Users\Kyl\.m2\repository\com\fasterxml\classmate\1.7.0\classmate-1.7.0.jar;C:\Users\Kyl\.m2\repository\net\bytebuddy\byte-buddy\1.15.11\byte-buddy-1.15.11.jar;C:\Users\Kyl\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\Kyl\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\Kyl\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\Kyl\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\Kyl\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\Kyl\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\Kyl\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\Kyl\.m2\repository\org\springframework\data\spring-data-jpa\3.4.4\spring-data-jpa-3.4.4.jar;C:\Users\Kyl\.m2\repository\org\springframework\data\spring-data-commons\3.4.4\spring-data-commons-3.4.4.jar;C:\Users\Kyl\.m2\repository\org\springframework\spring-orm\6.2.5\spring-orm-6.2.5.jar;C:\Users\Kyl\.m2\repository\org\springframework\spring-context\6.2.5\spring-context-6.2.5.jar;C:\Users\Kyl\.m2\repository\org\springframework\spring-expression\6.2.5\spring-expression-6.2.5.jar;C:\Users\Kyl\.m2\repository\org\springframework\spring-aop\6.2.5\spring-aop-6.2.5.jar;C:\Users\Kyl\.m2\repository\org\springframework\spring-tx\6.2.5\spring-tx-6.2.5.jar;C:\Users\Kyl\.m2\repository\org\springframework\spring-beans\6.2.5\spring-beans-6.2.5.jar;C:\Users\Kyl\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\Kyl\.m2\repository\org\springframework\spring-aspects\6.2.5\spring-aspects-6.2.5.jar;C:\Users\Kyl\.m2\repository\org\aspectj\aspectjweaver\1.9.23\aspectjweaver-1.9.23.jar;C:\Users\Kyl\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.18.3\jackson-databind-2.18.3.jar;C:\Users\Kyl\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.18.3\jackson-annotations-2.18.3.jar;C:\Users\Kyl\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.18.3\jackson-core-2.18.3.jar;C:\Users\Kyl\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.18.3\jackson-datatype-jdk8-2.18.3.jar;C:\Users\Kyl\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.18.3\jackson-datatype-jsr310-2.18.3.jar;C:\Users\Kyl\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.18.3\jackson-module-parameter-names-2.18.3.jar;C:\Users\Kyl\.m2\repository\io\projectreactor\netty\reactor-netty-http\1.2.4\reactor-netty-http-1.2.4.jar;C:\Users\Kyl\.m2\repository\io\netty\netty-codec-http\4.1.119.Final\netty-codec-http-4.1.119.Final.jar;C:\Users\Kyl\.m2\repository\io\netty\netty-common\4.1.119.Final\netty-common-4.1.119.Final.jar;C:\Users\Kyl\.m2\repository\io\netty\netty-buffer\4.1.119.Final\netty-buffer-4.1.119.Final.jar;C:\Users\Kyl\.m2\repository\io\netty\netty-transport\4.1.119.Final\netty-transport-4.1.119.Final.jar;C:\Users\Kyl\.m2\repository\io\netty\netty-codec\4.1.119.Final\netty-codec-4.1.119.Final.jar;C:\Users\Kyl\.m2\repository\io\netty\netty-handler\4.1.119.Final\netty-handler-4.1.119.Final.jar;C:\Users\Kyl\.m2\repository\io\netty\netty-codec-http2\4.1.119.Final\netty-codec-http2-4.1.119.Final.jar;C:\Users\Kyl\.m2\repository\io\netty\netty-resolver-dns\4.1.119.Final\netty-resolver-dns-4.1.119.Final.jar;C:\Users\Kyl\.m2\repository\io\netty\netty-resolver\4.1.119.Final\netty-resolver-4.1.119.Final.jar;C:\Users\Kyl\.m2\repository\io\netty\netty-codec-dns\4.1.119.Final\netty-codec-dns-4.1.119.Final.jar;C:\Users\Kyl\.m2\repository\io\netty\netty-resolver-dns-native-macos\4.1.119.Final\netty-resolver-dns-native-macos-4.1.119.Final-osx-x86_64.jar;C:\Users\Kyl\.m2\repository\io\netty\netty-resolver-dns-classes-macos\4.1.119.Final\netty-resolver-dns-classes-macos-4.1.119.Final.jar;C:\Users\Kyl\.m2\repository\io\netty\netty-transport-native-epoll\4.1.119.Final\netty-transport-native-epoll-4.1.119.Final-linux-x86_64.jar;C:\Users\Kyl\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.119.Final\netty-transport-native-unix-common-4.1.119.Final.jar;C:\Users\Kyl\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.119.Final\netty-transport-classes-epoll-4.1.119.Final.jar;C:\Users\Kyl\.m2\repository\io\projectreactor\netty\reactor-netty-core\1.2.4\reactor-netty-core-1.2.4.jar;C:\Users\Kyl\.m2\repository\io\netty\netty-handler-proxy\4.1.119.Final\netty-handler-proxy-4.1.119.Final.jar;C:\Users\Kyl\.m2\repository\io\netty\netty-codec-socks\4.1.119.Final\netty-codec-socks-4.1.119.Final.jar;C:\Users\Kyl\.m2\repository\org\springframework\spring-web\6.2.5\spring-web-6.2.5.jar;C:\Users\Kyl\.m2\repository\io\micrometer\micrometer-observation\1.14.5\micrometer-observation-1.14.5.jar;C:\Users\Kyl\.m2\repository\io\micrometer\micrometer-commons\1.14.5\micrometer-commons-1.14.5.jar;C:\Users\Kyl\.m2\repository\org\springframework\spring-webflux\6.2.5\spring-webflux-6.2.5.jar;C:\Users\Kyl\.m2\repository\org\springframework\boot\spring-boot-devtools\3.4.4\spring-boot-devtools-3.4.4.jar;C:\Users\Kyl\.m2\repository\org\springframework\boot\spring-boot\3.4.4\spring-boot-3.4.4.jar;C:\Users\Kyl\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.4.4\spring-boot-autoconfigure-3.4.4.jar;C:\Users\Kyl\.m2\repository\com\mysql\mysql-connector-j\9.1.0\mysql-connector-j-9.1.0.jar;C:\Users\Kyl\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\Kyl\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\Kyl\.m2\repository\org\springframework\spring-core\6.2.5\spring-core-6.2.5.jar;C:\Users\Kyl\.m2\repository\org\springframework\spring-jcl\6.2.5\spring-jcl-6.2.5.jar;C:\Users\Kyl\.m2\repository\io\projectreactor\reactor-core\3.7.4\reactor-core-3.7.4.jar;C:\Users\Kyl\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 12                                        {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 13                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 8388608                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 805306368                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 12868124672                               {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 8388608                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 4096                                   {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 0                                      {pd product} {ergonomic}
+     bool ProfileInterpreter                       = false                                  {pd product} {command line}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 12868124672                            {manageable} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Amazon Corretto\jdk21.0.2_13
+CLASSPATH=.;C:\Program Files (x86)\Java\jre1.5.0_04\lib\ext\QTJava.zip
+PATH=D:\WINDOWS.X64_193000_db_home\bin;D:\Users\Kyle\Downloads\WINDOWS.X64_193000_db_home\bin;C:\Program Files\Amazon Corretto\jdk21.0.2_13\bin;C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\bin\Intel64;C:\Program Files\ImageMagick-7.1.0-Q16-HDRI;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64_win\compiler;c:\program files (x86)\common files\intel\shared libraries\redist\intel64_win\compiler;c:\program files (x86)\common files\intel\shared libraries\redist\ia32_win\compiler;c:\program files (x86)\common files\intel\shared libraries\redist\ia32\compiler;c:\program files (x86)\common files\intel\shared libraries\redist\intel64\compiler;c:\windows\system32;c:\windows;c:\windows\system32\wbem;c:\windows\system32\windowspowershell\v1.0\;c:\windows\system32\openssh\;c:\program files (x86)\windows kits\10\windows performance toolkit\;D:\maven\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\nodejs\;C:\MinGW\bin;C:\Program Files\Git\cmd;C:\Program Files\GitHub CLI\;C:\Users\Kyl\AppData\Local\Programs\Python\Launcher\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Kyl\scoop\shims;C:\Users\Kyl\AppData\Local\Microsoft\WindowsApps;C:\Users\Kyl\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Kyl\AppData\Roaming\npm;C:\Users\Kyl\AppData\Local\Android\Sdk\platform-tools\;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.3.1.1\bin;C:\Users\Kyl\AppData\Local\Programs\Python\Python313;C:\Users\Kyl\AppData\Local\Programs\Python\Python313\scripts;D:\kubectl;C:\Program Files\Kubernetes\Minikube;C:\Program Files\Docker\Docker\resources\bin;C:\Users\Kyl\AppData\Local\Programs\Python\Launcher\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Kyl\scoop\shims;C:\Users\Kyl\AppData\Local\Microsoft\WindowsApps;C:\Users\Kyl\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\nodejs;C:\Users\Kyl\AppData\Roaming\npm;C:\Users\Kyl\AppData\Local\Android\Sdk\platform-tools\;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.3.1.1\bin;;C:\Users\Kyl\AppData\Local\Programs\Python\Python313;C:\Users\Kyl\AppData\Local\Programs\Python\Python313\scripts;
+USERNAME=Kyle
+LANG=en_US.UTF-8
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 8 Stepping 2, AuthenticAMD
+TMP=C:\Users\Kyl\AppData\Local\Temp
+TEMP=C:\Users\Kyl\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22000 (10.0.22000.2538)
+OS uptime: 0 days 22:20 hours
+Hyper-V role detected
+
+CPU: total 16 (initial active 16) (16 cores per cpu, 2 threads per core) family 23 model 8 stepping 2 microcode 0x0, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4a, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, hv, rdtscp, f16c
+Processor Information for all 16 processors :
+  Max Mhz: 3700, Current Mhz: 3700, Mhz Limit: 3700
+
+Memory: 4k page, system-wide physical 49056M (25322M free)
+TotalPageFile size 53056M (AvailPageFile size 772M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 66M, peak: 834M
+
+vm_info: OpenJDK 64-Bit Server VM (21.0.2+13-LTS) for windows-amd64 JRE (21.0.2+13-LTS), built on 2024-01-10T23:18:03Z by "Administrator" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.
