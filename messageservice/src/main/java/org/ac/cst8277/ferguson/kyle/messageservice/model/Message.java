@@ -16,8 +16,9 @@ public class Message {
     private Long id;
 
     @Column(name = "producer_id", nullable = false)
-    private String producerId;  // UUID from UserManagementService
+    private String producerId;  
 
+    
     @Column(nullable = false, columnDefinition = "TEXT")
     private String content;
 

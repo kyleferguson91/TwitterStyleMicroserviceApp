@@ -11,7 +11,13 @@ import java.util.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; // this to be the pk 
+
+
+        // persistent public id, generated once at registration
+        @Column(unique = true, updatable = false)
+        private String publicId = UUID.randomUUID().toString();
+        
 
     private String username;
     private String password;
