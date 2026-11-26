@@ -10,3 +10,5 @@ A Java 17 / Spring Boot project with separate services for users and messages. I
 4. In separate terminals, run `.\mvnw.cmd spring-boot:run` from `usermanagementservice` and `messageservice` on Windows. On macOS/Linux, use `sh mvnw spring-boot:run`.
 
 The user service listens on port 8081 and the message service on 8082. JPA is configured to update the tables on startup. This is a coursework backend, with no standalone web frontend or hosted demo.
+
+Message requests need an `Authorization` header containing a token from the user service. If you change the user-service port, set `usermanagement.url` in the message service to match. GitHub sign-in needs your own OAuth app; local database startup and message creation/retrieval have been checked with MySQL 8.4.
